@@ -5,11 +5,15 @@ def main():
     if len(sys.argv) <= 1:
         print("none")
         return
-    if sys.argv[2] > sys.argv[1]:
+    start = int(sys.argv[1])
+    end = int(sys.argv[2])
+    if end > start:
         step = 1
+        stop = end + 1
     else:
         step = -1
-    for i in range(int(sys.argv[1]), int(sys.argv[2]) + 1, step):
+        stop = end - 1
+    for i in range(start, stop, step):
         my_list.append(i)
     print(my_list)
 main()
